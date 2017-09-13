@@ -1,3 +1,21 @@
+set laststatus=2                      " Always show the status line
+set statusline=Editing\ %t            " Filename
+set statusline+=%y                    " Filetype
+set statusline+=,\ Line:\ %l          " Line: lineno.
+set statusline+=\/\ %L                " / Total-Lines
+set statusline+=,\ col:\ %c           " , col: colno.
+set statusline+=\ -\ %{CurrentWord()} " - <cword> 
+set statusline+=[%{SyntaxItem()}]     " [SyntaxGroup]
+set statusline+=%=                    " On right side ...
+set statusline+=%f                    " relative path
+function! CurrentWord()
+  return expand("<cword>")
+endfunction
+" From vim wiki
+function! SyntaxItem()
+  return synIDattr(synID(line("."),col("."),1),"name")
+endfunction
+
 " Neovim config
 set number                      " Show line numbers
 set numberwidth=4               " Default 3 digits wide
@@ -6,12 +24,17 @@ set wrapmargin=8                " Begin wrapping 8 characters from window border
 set autoindent                  " Begin new lines with indent from previous line
 set wildmenu                    " Turn on enhanced command line completion
 set expandtab                   " Use spaces in place of tabs
-set tabstop=2                   " Tab-stop = 2 set shiftwidth=2
+set tabstop=2                   " Tab-stop = 2
+set shiftwidth=2
+if has('win32') || has('win64')
 set directory=$HOME\_neovim\tmp " Place swap files in ...
+endif
 set list                        " Show hidden characters(EOL, etc.)
 set listchars=eol:¬,trail:·     " Show EOL, trailing spaces
 "filetype plugin on              " Enable filetype plugins
 syntax on                       " Enable syntax highlighting
+set cmdheight=2                 " Allow 2 lines for cmdheight
+"set termguicolors               " Enable truecolor
 
 " --------
 " Mappings
