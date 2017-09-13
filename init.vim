@@ -12,3 +12,50 @@ set list                        " Show hidden characters(EOL, etc.)
 set listchars=eol:¬,trail:·     " Show EOL, trailing spaces
 "filetype plugin on              " Enable filetype plugins
 syntax on                       " Enable syntax highlighting
+
+" --------
+" Mappings
+" -------- 
+
+" Leader key
+let mapleader = ","
+let maplocalleader = "\\"
+
+" Alternative exit from Insert Mode
+inoremap jk <esc>
+
+" UPPERCASE the Current Word
+inoremap <c-u> <esc>lviwUi
+nnoremap <c-u> viwU
+
+" Alternative 'to beginning/end of line'
+nnoremap H ^
+nnoremap L $
+
+" Alternative to 'in-parenthesis'
+onoremap p i(
+
+" Replace 'next parenthesis'/'last parenthesis'
+onoremap in( :<c-u>normal! f(vi(<cr>
+onoremap il( :<c-u>normal! F)vi(<cr>
+
+" Add blank lines but stay in normal mode
+nnoremap <leader>o o<esc>
+nnoremap <leader>O O<esc>
+
+" Move between vertical windows
+noremap <c-H> <c-W>h
+noremap <c-L> <c-W>l
+
+" Move between horizontal windows
+noremap <c-J> <c-W>j<c-W>_
+noremap <c-K> <c-W>k<c-W>_
+
+" Disable arrow keys in normal mode
+nnoremap <Up> <nop>
+nnoremap <Down> <nop>
+nnoremap <Left> <nop>
+nnoremap <Right> <nop>
+
+" Next tab
+noremap <F9> :tabn<CR>
