@@ -1,3 +1,9 @@
+" Update runtimepath
+if has('win32') || has('win64')
+  set runtimepath^=$HOME\_neovim\plugins
+endif
+
+" Set up status line
 set laststatus=2                      " Always show the status line
 set statusline=Editing\ %t            " Filename
 set statusline+=%y                    " Filetype
@@ -35,6 +41,7 @@ set listchars=eol:¬,trail:·     " Show EOL, trailing spaces
 syntax on                       " Enable syntax highlighting
 set cmdheight=2                 " Allow 2 lines for cmdheight
 "set termguicolors               " Enable truecolor
+colorscheme compassion          " Use my compassion color scheme
 
 " --------
 " Mappings
