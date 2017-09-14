@@ -37,7 +37,7 @@ set directory=$HOME\_neovim\tmp " Place swap files in ...
 endif
 set list                        " Show hidden characters(EOL, etc.)
 set listchars=eol:¬,trail:·     " Show EOL, trailing spaces
-"filetype plugin on              " Enable filetype plugins
+filetype plugin on              " Enable filetype plugins
 syntax on                       " Enable syntax highlighting
 set cmdheight=2                 " Allow 2 lines for cmdheight
 "set termguicolors               " Enable truecolor
