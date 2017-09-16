@@ -33,7 +33,7 @@ set expandtab                   " Use spaces in place of tabs
 set tabstop=2                   " Tab-stop = 2
 set shiftwidth=2
 if has('win32') || has('win64')
-set directory=$HOME\_neovim\tmp " Place swap files in ...
+  set directory=$HOME\_neovim\tmp " Place swap files in ...
 endif
 set list                        " Show hidden characters(EOL, etc.)
 set listchars=eol:¬,trail:·     " Show EOL, trailing spaces
