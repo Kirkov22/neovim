@@ -44,7 +44,7 @@ if s:use_truecolor
   let s:foreground = "#DADBB1"  " Pale Yellow   - 11
   let s:selection  = "#373b41"
   "   let s:line       = "#282a2e"
-  let s:line       = "#282828"  " Dark Gray     - 0
+  let s:line       = "#4A5858"  " Dark Gray     - 0
   "   let s:comment    = "#707880"
   let s:comment    = "#909090"  " Mid Gray      - 8
   "   let s:red        = "#cc6666"
