@@ -1,6 +1,8 @@
 " Update runtimepath
 if has('win32') || has('win64')
   set runtimepath^=$HOME\_neovim\plugins
+else
+  set runtimepath^=~/_neovim/plugins
 endif
 
 " Set up status line
@@ -34,6 +36,8 @@ set tabstop=2                   " Tab-stop = 2
 set shiftwidth=2
 if has('win32') || has('win64')
   set directory=$HOME\_neovim\tmp " Place swap files in ...
+else
+  set directory=~/_neovim/tmp
 endif
 set list                        " Show hidden characters(EOL, etc.)
 set listchars=eol:¬,trail:·     " Show EOL, trailing spaces
