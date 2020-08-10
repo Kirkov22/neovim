@@ -1,8 +1,6 @@
 " Update runtimepath
 if has('win32') || has('win64')
   set runtimepath^=$HOME\_neovim\plugins
-else
-  set runtimepath^=~/_neovim/plugins
 endif
 
 " Set up status line
@@ -34,18 +32,21 @@ set wildmenu                    " Turn on enhanced command line completion
 set expandtab                   " Use spaces in place of tabs
 set tabstop=2                   " Tab-stop = 2
 set shiftwidth=2
+set visualbell                  " Disable chime
+
 if has('win32') || has('win64')
   set directory=$HOME\_neovim\tmp " Place swap files in ...
 else
-  set directory=~/_neovim/tmp
+  set directory=~/tmp
 endif
+
 set list                        " Show hidden characters(EOL, etc.)
 set listchars=eol:¬,trail:·     " Show EOL, trailing spaces
 filetype plugin on              " Enable filetype plugins
 syntax on                       " Enable syntax highlighting
 set cmdheight=2                 " Allow 2 lines for cmdheight
 "set termguicolors               " Enable truecolor
-colorscheme compassion          " Use my compassion color scheme
+colorscheme zellner
 
 " --------
 " Mappings
